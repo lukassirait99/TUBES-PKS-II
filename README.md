@@ -1,8 +1,8 @@
-# Program Menghitung Peluang Program Menghitung Gaya Lorentz Pada Penghantar Listrik
+# Program Menghitung Program Menghitung Gaya Lorentz Pada Penghantar Listrik
 Program ini akan menghitung Program Menghitung Gaya Lorentz Pada Penghantar Listrikdari 5 pilihan opsi.
 
 ## Anggota kelompok        
-	  1. Hadi Mustaqim_122320007_Teknik Fisika
+	1. Hadi Mustaqim_122320007_Teknik Fisika
         2. Lukas Yunan Raiglen Sirait_122320008_Teknik Fisika
         3. Saut Martua Turnip_122320010_Teknik Fisika
         4. Pridonni R.V. Manullang_122130056_Teknik Elektro
@@ -28,7 +28,7 @@ Program ini menggunakan fitur do-while yang dimana dijalankan aksi nya terlebih 
 
 | File |      link     |
 | ------ | ------ |
-| Laporan | tempel link disini |
+| Laporan | https://drive.google.com/file/d/10M8Ar_qXWKXWn4nqHv43iNUTWov1Ner5/view?usp=drivesdk |
 | Program | https://github.com/lukassirait99/TUBES-PKS-II  |
 | Program running | https://replit.com/@LUKAS-YUNAN-RAI/Program-Menghitung-Gaya-Lorentz-pada-Penghantar-Listrik?v=1   |
 | Video | https://youtu.be/TYX7xVOXqIY  |
