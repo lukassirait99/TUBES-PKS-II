@@ -1,0 +1,242 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int MAX_DATA = 100;
+    float total, rataRata, I[MAX_DATA], B[MAX_DATA], L[MAX_DATA], F[MAX_DATA], M[MAX_DATA], R[MAX_DATA], V[MAX_DATA], E[MAX_DATA];
+    int numData = 0;
+    char choice;
+    
+    /*                   Kelompok 5 TPB 7
+        Hadi Mustaqim_122320007_Teknik Fisika
+        Lukas Yunan Raiglen Sirait_122320008_Teknik Fisika
+        Saut Martua Turnip_122320010_Teknik Fisika
+        Pridonni R.V. Manullang_122130056_Teknik Elektro
+                                                         */
+
+    do {
+        cout <<" ========================================================================" << endl;
+        cout << "||\tProgram Menghitung Gaya Lorentz Pada Penghantar Listrik\t\t||" << endl;
+        cout <<" ========================================================================" << endl;
+        cout << "\nPilih jenis perhitungan:" << endl;
+        cout << "1. Hitung Gaya Lorentz" << endl;
+        cout << "2. Hitung Medan Magnet" << endl;
+        cout << "3. Hitung Hambatan Listrik" << endl;
+        cout << "4. Hitung Tegangan Listrik" << endl;
+        cout << "5. Hitung Energi Listrik" << endl;
+        cout << "Masukkan pilihan (1-5): ";
+        cin >> choice;
+
+        if (choice == '1') {
+            cout << "\nMasukkan Jumlah Data yang akan dihitung: ";
+            cin >> numData;
+
+            if (numData > MAX_DATA) {
+                cout << "Jumlah data melebihi batas maksimal!" << endl;
+                return 1;
+            }
+
+            for (int i = 0; i < numData; i++) {
+                cout << "Data ke-" << i + 1 << ":" << endl;
+                cout << "Masukkan Nilai Arus Listrik (A): ";
+                cin >> I[i];
+                cout << "Masukkan Nilai Medan Magnet (T): ";
+                cin >> B[i];
+                cout << "Masukkan Panjang Penghantar (m): ";
+                cin >> L[i];
+
+                // Menghitung Gaya Lorentz
+                F[i] = I[i] * B[i] * L[i];
+            }
+            cout << endl;
+
+            // Menghitung total array
+            total = 0;
+            for (int i = 0; i < numData; i++) {
+                total += F[i];
+            }
+            
+            // Menghitung rata-rata array
+            rataRata = total / numData;
+            
+            cout << "Hasil Perhitungan:" << endl;
+            for (int i = 0; i < numData; i++) {
+                cout << "Data ke-" << i + 1 << ": ";
+                cout << "Gaya Lorentz pada Penghantar Listrik adalah " << F[i] << " N" << endl;
+            }
+        } else if (choice == '2') {
+            cout << "\nMasukkan Jumlah Data yang akan dihitung: ";
+            cin >> numData;
+
+            if (numData > MAX_DATA) {
+                cout << "Jumlah data melebihi batas maksimal!" << endl;
+                return 1;
+            }
+
+            for (int i = 0; i < numData; i++) {
+                cout << "Data ke-" << i + 1 << ":" << endl;
+                cout << "Masukkan Nilai Gaya Lorentz (N): ";
+                cin >> F[i];
+                cout << "Masukkan Nilai Arus Listrik (A): ";
+                cin >> I[i];
+                cout << "Masukkan Panjang Penghantar (m): ";
+                cin >> L[i];
+
+                // Menghitung Medan Magnet
+                M[i] = F[i] / (I[i] * L[i]);
+            }
+            cout << endl;
+
+            // Menghitung total array
+            total = 0;
+            for (int i = 0; i < numData; i++) {
+                total += M[i];
+            }
+            
+            // Menghitung rata-rata array
+            rataRata = total / numData;
+
+            cout << "Hasil Perhitungan:" << endl;
+            for (int i = 0; i < numData; i++) {
+                cout << "Data ke-" << i + 1 << ": ";
+                cout << "Medan Magnet pada Penghantar Listrik adalah " << M[i] << " T" << endl;
+            }
+        } else if (choice == '3') {
+            cout << "\nMasukkan Jumlah Data yang akan dihitung: ";
+            cin >> numData;
+
+            if (numData > MAX_DATA) {
+                cout << "Jumlah data melebihi batas maksimal!" << endl;
+                return 1;
+            }
+
+            for (int i = 0; i < numData; i++) {
+                cout << "Data ke-" << i + 1 << ":" << endl;
+                cout << "Masukkan Nilai Tegangan Listrik (V): ";
+                cin >> V[i];
+                cout << "Masukkan Nilai Arus Listrik (A): ";
+                cin >> I[i];
+
+                // Menghitung Hambatan Listrik
+                R[i] = V[i] / I[i];
+            }
+            cout << endl;
+
+            // Menghitung total array
+            total = 0;
+            for (int i = 0; i < numData; i++) {
+                total += R[i];
+            }
+            
+            // Menghitung rata-rata array
+            rataRata = total / numData;
+
+
+            cout << "Hasil Perhitungan:" << endl;
+            for (int i = 0; i < numData; i++) {
+                cout << "Data ke-" << i + 1 << ": ";
+                cout << "Hambatan Listrik adalah " << R[i] << " Ohm" << endl;
+            }
+        } else if (choice == '4') {
+            cout << "\nMasukkan Jumlah Data yang akan dihitung: ";
+            cin >> numData;
+
+            if (numData > MAX_DATA) {
+                cout << "Jumlah data melebihi batas maksimal!" << endl;
+                return 1;
+            }
+
+            for (int i = 0; i < numData; i++) {
+                cout << "Data ke-" << i + 1 << ":" << endl;
+                cout << "Masukkan Nilai Arus Listrik (A): ";
+                cin >> I[i];
+                cout << "Masukkan Nilai Hambatan Listrik (Ohm): ";
+                cin >> R[i];
+
+                // Menghitung Tegangan Listrik
+                V[i] = I[i] * R[i];
+            }
+            cout << endl;
+
+            // Menghitung total array
+            total = 0;
+            for (int i = 0; i < numData; i++) {
+                total += V[i];
+            }
+            
+            // Menghitung rata-rata array
+            rataRata = total / numData;
+
+            cout << "Hasil Perhitungan:" << endl;
+            for (int i = 0; i < numData; i++) {
+                cout << "Data ke-" << i + 1 << ": ";
+                cout << "Tegangan Listrik adalah " << V[i] << " V" << endl;
+            }
+        } else if (choice == '5') {
+            cout << "\nMasukkan Jumlah Data yang akan dihitung: ";
+            cin >> numData;
+
+            if (numData > MAX_DATA) {
+                cout << "Jumlah data melebihi batas maksimal!" << endl;
+                return 1;
+            }
+
+            for (int i = 0; i < numData; i++) {
+                cout << "Data ke-" << i + 1 << ":" << endl;
+                cout << "Masukkan Nilai Arus Listrik (A): ";
+                cin >> I[i];
+                cout << "Masukkan Nilai Hambatan Listrik (Ohm): ";
+                cin >> R[i];
+
+                // Menghitung Energi Listrik
+                E[i] = ((I[i] * I[i]) * R[i]);
+            }
+
+            cout << endl;
+
+            // Menghitung total array
+            total = 0;
+            for (int i = 0; i < numData; i++) {
+                total += E[i];
+            }
+            // Menghitung rata-rata array
+            rataRata = total / numData;
+
+            cout << "Hasil Perhitungan:" << endl;
+            for (int i = 0; i < numData; i++) {
+                cout << "Data ke-" << i + 1 << ": ";
+                cout << "Energi Listrik adalah " << E[i] << " J" << endl;
+            }
+        } else {
+            cout << "Pilihan tidak valid!" << endl;
+        }
+
+            cout << "Total Gaya : " << total << " J" << endl;
+            cout << "Rerata Gaya: " << rataRata << " J" << endl;
+        cout << "\nApakah Anda ingin menghitung lagi? (y/n): ";
+        cin >> choice;
+    } while (choice == 'y' || choice == 'Y');
+    
+    cout <<" ========================================================================" << endl;
+    cout << "||\t\tTerima kasih telah menggunakan program ini!\t\t||" << endl;
+    cout <<" ========================================================================" << endl;
+    
+    cout << "\t\t\t" << "         *****     " << endl;
+    cout << "\t\t\t" <<"     ***        ***  " << endl;
+    cout << "\t\t\t" <<"   **             **" << endl;
+    cout << "\t\t\t" <<" **                 **" << endl;
+    cout << "\t\t\t" << " *   0           0    *" << endl;
+    cout << "\t\t\t" << "*                     *" << endl;
+    cout << "\t\t\t" << "*           |         *" << endl;
+    cout << "\t\t\t" <<"*           |         *" << endl;
+    cout << "\t\t\t" <<"*                     *" << endl;
+    cout << "\t\t\t" <<"*                     *" << endl;
+    cout << "\t\t\t" <<" **         U       **" << endl;
+    cout << "\t\t\t" <<"   **             **" << endl;
+    cout << "\t\t\t" <<"     ***       ***" << endl;
+    cout << "\t\t\t" <<"         *****" ;
+    
+    return 0;
+}
+
